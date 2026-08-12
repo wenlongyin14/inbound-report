@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="860" viewBox="0 0 1600 860">
+<defs><marker id="arrow-01" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2C55D3"/></marker><marker id="arrow-02" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#CC7C2E"/></marker><marker id="arrow-03" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#7C93E4"/></marker><marker id="arrow-04" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#B8C0CC"/></marker></defs>
+<rect width="1600" height="860" fill="#FFFFFF"/>
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.meta{font-size:18px;fill:#66758A}.pct{font-size:28px;font-weight:800;fill:#fff}
+.cardtitle{font-size:24px;font-weight:800;fill:#17315F}.cardtext{font-size:18px;fill:#243447}.cardmuted{font-size:18px;fill:#66758A}
+.num{font-size:18px;font-weight:800;letter-spacing:.08em}
+</style>
+<path d="M 655.0 275.0 A 205 205 0 0 1 1004.9 413.6" fill="none" stroke="#2C55D3" stroke-width="70"/>
+<text class="pct" x="875.5" y="239.4" text-anchor="middle">37%</text>
+<path d="M 1004.9 413.6 A 205 205 0 0 1 655.0 565.0" fill="none" stroke="#CC7C2E" stroke-width="70"/>
+<text class="pct" x="881.4" y="618.1" text-anchor="middle">38%</text>
+<path d="M 655.0 565.0 A 205 205 0 0 1 595.1 413.6" fill="none" stroke="#7C93E4" stroke-width="70"/>
+<text class="pct" x="609.4" y="505.5" text-anchor="middle">13%</text>
+<path d="M 595.1 413.6 A 205 205 0 0 1 655.0 275.0" fill="none" stroke="#B8C0CC" stroke-width="70"/>
+<text class="pct" x="611.9" y="348.6" text-anchor="middle">12%</text>
+<circle cx="800" cy="420" r="128" fill="#fff"/>
+<text x="800" y="416" text-anchor="middle" style="font-size:54px;font-weight:850;fill:#17315F">2025</text>
+<text x="800" y="454" text-anchor="middle" class="meta">项目结构</text>
+<path d="M 891.3 189.4 C 952.8 189.4, 993.8 194.5, 1028.0 194.5" fill="none" stroke="#2C55D3" stroke-width="3" marker-end="url(#arrow-01)"/>
+<path d="M 898.5 647.6 C 956.8 647.6, 995.6 672.5, 1028.0 672.5" fill="none" stroke="#CC7C2E" stroke-width="3" marker-end="url(#arrow-02)"/>
+<path d="M 569.4 511.3 C 579.6 511.3, 586.4 682.5, 592.0 682.5" fill="none" stroke="#7C93E4" stroke-width="3" marker-end="url(#arrow-03)"/>
+<path d="M 572.4 321.5 C 581.2 321.5, 587.1 194.5, 592.0 194.5" fill="none" stroke="#B8C0CC" stroke-width="3" marker-end="url(#arrow-04)"/>
+<rect x="1040" y="92" width="500" height="205" fill="#fff" stroke="#D9E1EA" stroke-width="2"/>
+<rect x="1040" y="92" width="8" height="205" fill="#2C55D3"/>
+<text class="num" x="1066" y="126" fill="#2C55D3">01</text>
+<text class="cardtitle" x="1116" y="130">广告投放&amp;星球号｜37%</text>
+<text class="cardtext" x="1066" y="172"><tspan font-weight="700" fill="#243447">洞察：</tspan>海外投放需求增长</text>
+<text class="cardmuted" x="1066" y="211"><tspan font-weight="700" fill="#243447">打法：</tspan>联合IBU开展联合投放，拓展优质海外</text>
+<text class="cardmuted" x="1066" y="243">媒体资源</text>
+<rect x="1040" y="570" width="500" height="205" fill="#fff" stroke="#D9E1EA" stroke-width="2"/>
+<rect x="1040" y="570" width="8" height="205" fill="#CC7C2E"/>
+<text class="num" x="1066" y="604" fill="#CC7C2E">02</text>
+<text class="cardtitle" x="1116" y="608">重点大会｜38%</text>
+<text class="cardtext" x="1066" y="650"><tspan font-weight="700" fill="#243447">洞察：</tspan>传统大会需要新内容与新模式</text>
+<text class="cardmuted" x="1066" y="689"><tspan font-weight="700" fill="#243447">打法：</tspan>从ToG交付转向市场化、有传播性的</text>
+<text class="cardmuted" x="1066" y="721">内容共创大会</text>
+<rect x="60" y="570" width="520" height="225" fill="#fff" stroke="#D9E1EA" stroke-width="2"/>
+<rect x="60" y="570" width="8" height="225" fill="#7C93E4"/>
+<text class="num" x="86" y="604" fill="#7C93E4">03</text>
+<text class="cardtitle" x="136" y="608">达人/KOL｜13%</text>
+<text class="cardtext" x="86" y="650"><tspan font-weight="700" fill="#243447">洞察：</tspan>50+个20W单价达人活动；26H1海外推介</text>
+<text class="cardtext" x="86" y="682">需求较25年全年增长3倍</text>
+<text class="cardmuted" x="86" y="721"><tspan font-weight="700" fill="#243447">打法：</tspan>采风主题化、标准化；推介一国一策、</text>
+<text class="cardmuted" x="86" y="753">多城联合出海</text>
+<rect x="60" y="92" width="520" height="205" fill="#fff" stroke="#D9E1EA" stroke-width="2"/>
+<rect x="60" y="92" width="8" height="205" fill="#B8C0CC"/>
+<text class="num" x="86" y="190" fill="#B8C0CC">04</text>
+<text class="cardtitle" x="136" y="194">其他｜12%</text>
+</svg>
