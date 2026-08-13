@@ -1,0 +1,434 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>国内目的地商业化升级｜Trip.com Group</title>
+<style>
+  :root {
+    --blue: #2C55D3;
+    --blue-dark: #17315F;
+    --blue-soft: #7C93E4;
+    --orange: #CC7C2E;
+    --ink: #1d2733;
+    --mut: #5a6675;
+    --line: #dbe1ea;
+    --soft: #f4f6fa;
+    --soft-blue: #eef2fb;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: #eef1f6;
+    color: var(--ink);
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(8px);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--blue-dark); font-size: 15px; }
+  .brand .logo { width: 22px; height: 22px; border-radius: 50%; background: conic-gradient(var(--blue) 0 60%, var(--orange) 60% 100%); }
+  .brand small { color: var(--mut); font-weight: 600; }
+  .nav { display: flex; align-items: center; gap: 18px; font-size: 13px; }
+  .nav a { color: var(--mut); text-decoration: none; font-weight: 600; }
+  .nav a:hover { color: var(--blue); }
+  .nav .print-btn { border: 0; cursor: pointer; padding: 7px 14px; border-radius: 999px; background: var(--blue); color: #fff; font-weight: 700; font-size: 13px; }
+
+  .page { max-width: 920px; margin: 0 auto; padding: 0 24px 64px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 52px 0 26px; border-bottom: 2px solid var(--blue-dark); }
+  .kicker { display: inline-flex; align-items: center; gap: 10px; color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; }
+  .kicker::before { content: ""; width: 26px; height: 3px; background: var(--orange); }
+  .hero h1 { margin: 14px 0 12px; font-size: clamp(28px, 3.4vw, 38px); line-height: 1.3; color: var(--blue-dark); letter-spacing: 0.5px; }
+  .hero .lead { margin: 0; max-width: 62em; color: var(--mut); font-size: 15px; line-height: 1.9; }
+  .hero .lead b { color: var(--ink); }
+
+  .keys { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+  .key { flex: 1 1 0; min-width: 200px; display: flex; align-items: baseline; gap: 10px; padding: 12px 16px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--blue); text-decoration: none; }
+  .key .n { font-size: 12px; font-weight: 800; color: var(--orange); }
+  .key .w { font-size: 17px; font-weight: 800; color: var(--blue-dark); }
+  .key .q { font-size: 12px; color: var(--mut); }
+
+  /* ---------- Sections ---------- */
+  .sec { padding-top: 42px; }
+  .sec-head { margin-bottom: 18px; }
+  .sec-head .tag { font-size: 12px; font-weight: 800; letter-spacing: 2px; color: var(--orange); text-transform: uppercase; }
+  .sec-head h2 { margin: 6px 0 4px; font-size: 24px; line-height: 1.35; color: var(--blue-dark); }
+  .sec-head .sub { margin: 0; color: var(--mut); font-size: 14px; }
+
+  .sec h3 { margin: 24px 0 10px; font-size: 16px; color: var(--blue-dark); }
+  .sec h3 .en { color: var(--orange); font-size: 12px; font-weight: 800; letter-spacing: 1px; margin-right: 8px; }
+  .sec p { margin: 8px 0; }
+  .sec p b, .sec li b, td b { color: var(--blue-dark); }
+
+  .soul { margin: 18px 0; padding: 15px 20px; background: var(--soft-blue); border-left: 4px solid var(--blue); font-size: 16.5px; font-weight: 800; color: var(--blue-dark); line-height: 1.6; }
+
+  /* 2025 structure bar */
+  .bar { display: flex; height: 30px; margin: 14px 0 8px; border-radius: 4px; overflow: hidden; }
+  .bar .seg { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; }
+  .bar .b { background: var(--blue); }
+  .bar .o { background: var(--orange); }
+  .bar .l { background: var(--blue-soft); }
+  .bar .g { background: #B8C0CC; }
+  .bar-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; color: var(--mut); margin-bottom: 6px; }
+  .bar-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; }
+
+  /* insights */
+  .insights { margin: 10px 0 4px; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; }
+  .ins { position: relative; padding-left: 18px; font-size: 14px; line-height: 1.65; }
+  .ins::before { content: ""; position: absolute; left: 0; top: 9px; width: 9px; height: 9px; border-radius: 2px; background: var(--blue); }
+  .ins.o::before { background: var(--orange); }
+  .ins.l::before { background: var(--blue-soft); }
+  .ins.g::before { background: #B8C0CC; }
+  .ins b { color: var(--blue-dark); }
+
+  /* compare table */
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th, td { padding: 10px 14px; border: 1px solid var(--line); text-align: left; vertical-align: top; line-height: 1.6; }
+  thead th { background: var(--blue-dark); color: #fff; font-size: 13px; letter-spacing: 1px; border-color: var(--blue-dark); }
+  .compare td.old { color: var(--mut); width: 42%; }
+  .compare td.new { font-weight: 800; color: var(--blue); background: var(--soft-blue); }
+  .compare td.arrow { width: 34px; text-align: center; color: var(--orange); font-weight: 800; border-left: 0; border-right: 0; }
+
+  /* capability map */
+  .cap-flow { display: flex; align-items: stretch; gap: 6px; margin: 14px 0 0; }
+  .cap { flex: 1 1 0; min-width: 0; padding: 12px 13px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--blue-soft); font-size: 12.5px; line-height: 1.6; color: var(--mut); }
+  .cap .tag { display: inline-block; margin-bottom: 5px; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; color: var(--orange); }
+  .cap b { display: block; margin-bottom: 3px; color: var(--blue-dark); font-size: 14px; }
+  .cap.hot { background: var(--soft-blue); border-top-color: var(--blue); }
+  .carr { align-self: center; color: var(--orange); font-weight: 800; font-size: 15px; }
+  .cap-link { margin: 0; padding: 6px 0; text-align: center; color: var(--blue); font-size: 12.5px; font-weight: 800; letter-spacing: 1px; }
+  .prod-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 6px; }
+  .prod { padding: 9px 12px; background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--orange); font-size: 13px; font-weight: 800; color: var(--blue-dark); }
+  .prod small { display: block; margin-top: 2px; color: var(--mut); font-weight: 600; font-size: 11px; }
+
+  /* product table */
+  .proof td { font-size: 13px; }
+  .proof td:first-child { width: 15%; }
+  .proof .pi { font-weight: 800; color: var(--blue-dark); }
+  .proof .pi small { display: block; color: var(--orange); font-size: 11px; font-weight: 700; margin-top: 2px; }
+
+  /* photo strip */
+  .photo-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0 4px; }
+  .photo-strip figure { margin: 0; }
+  .photo-strip img { width: 100%; height: 120px; object-fit: cover; border: 1px solid var(--line); display: block; }
+  .photo-strip figcaption { margin-top: 4px; font-size: 11.5px; color: var(--mut); line-height: 1.4; }
+
+  /* ratio + std */
+  .ratio { display: flex; height: 34px; margin: 12px 0 6px; border-radius: 4px; overflow: hidden; }
+  .ratio .r80 { width: 80%; background: var(--blue); color: #fff; display: flex; align-items: center; padding-left: 14px; font-weight: 800; font-size: 13px; }
+  .ratio .r20 { width: 20%; background: var(--orange); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; }
+  .std { display: flex; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
+  .std .s { flex: 1 1 0; min-width: 130px; padding: 10px 12px; text-align: center; background: var(--soft); border: 1px solid var(--line); font-weight: 800; color: var(--blue-dark); font-size: 13.5px; }
+  .std .s small { display: block; color: var(--mut); font-weight: 600; font-size: 11.5px; margin-top: 2px; }
+
+  /* value blocks */
+  .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 14px 0; }
+  .value { padding: 15px 16px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--blue); font-size: 13.5px; line-height: 1.7; }
+  .value:nth-child(2) { border-top-color: var(--orange); }
+  .value b.t { display: block; font-size: 15px; color: var(--blue-dark); margin-bottom: 5px; }
+  .value .mut { color: var(--mut); }
+
+  /* positive cycle */
+  .cycle { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 14px 0 6px; padding: 14px 16px; background: var(--soft-blue); border: 1px solid var(--line); }
+  .cycle .c { flex: 1 1 0; min-width: 120px; text-align: center; padding: 9px 8px; background: #fff; border: 1px solid var(--line); border-radius: 999px; font-size: 12.5px; font-weight: 800; color: var(--blue-dark); line-height: 1.45; }
+  .cycle .arr { color: var(--orange); font-weight: 800; font-size: 15px; }
+
+  .footer { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 12px; color: var(--mut); }
+
+  /* solution packages + base */
+  .pkg-wrap { margin: 12px 0 6px; padding: 16px 16px 12px; background: var(--soft-blue); border: 1.5px solid var(--blue); }
+  .pkg-flow { display: flex; align-items: stretch; gap: 8px; }
+  .parr { align-self: center; color: var(--blue); font-weight: 800; font-size: 18px; }
+  .pkg { flex: 1 1 0; min-width: 0; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--blue); padding: 14px 16px; }
+  .pkg .no { font-size: 11px; font-weight: 800; letter-spacing: 1px; color: var(--orange); }
+  .pkg b.t { display: block; font-size: 16px; color: var(--blue-dark); margin: 3px 0 6px; }
+  .pkg .prob { font-size: 13px; color: var(--ink); line-height: 1.6; margin-bottom: 8px; }
+  .pkg .conf { border-top: 1px dashed var(--line); padding-top: 8px; font-size: 12px; color: var(--mut); line-height: 1.55; }
+  .pkg em { font-style: normal; color: var(--orange); font-weight: 800; font-size: 11px; }
+  .pkg .conf b { color: var(--blue); }
+  .pkg-wrap .base-bar { margin-top: 12px; }
+  .base-bar {
+    padding: 12px 18px;
+    background: var(--blue-dark); color: #fff;
+    display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+    font-size: 13.5px; font-weight: 700;
+  }
+  .base-bar .lbl { color: #F0B87E; font-weight: 800; letter-spacing: 1px; margin-right: 4px; }
+  .base-bar .arr { color: var(--blue-soft); font-weight: 800; }
+
+  /* targets + pipeline */
+  .tgts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0; }
+  .tgt { padding: 13px 16px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--orange); }
+  .tgt b { display: block; font-size: 21px; color: var(--blue-dark); line-height: 1.25; margin-bottom: 4px; }
+  .tgt span { font-size: 12.5px; color: var(--mut); line-height: 1.55; }
+  .pipe { margin: 12px 0 4px; padding: 10px 14px; border: 1px dashed #c3ccd9; background: #fafbfd; font-size: 13px; color: var(--mut); line-height: 1.65; }
+  .pipe b { color: var(--blue-dark); }
+  .values.two { grid-template-columns: 1fr 1fr; }
+  .mini td, .mini th { font-size: 13px; }
+  .photo-strip.two { grid-template-columns: 1fr 1fr; }
+  .photo-strip.two img { height: 150px; }
+
+  @media (max-width: 760px) {
+    .nav a { display: none; }
+    .values, .insights { grid-template-columns: 1fr; }
+    .cap-flow { flex-wrap: wrap; }
+    .cap { flex: 1 1 45%; }
+    .prod-band, .photo-strip { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ---------- Print ---------- */
+  @page { size: A4 portrait; margin: 11mm 12mm; }
+
+  @media print {
+    body { background: #fff; font-size: 9pt; line-height: 1.55; }
+    .topbar { display: none; }
+    .page { max-width: none; padding: 0; }
+
+    .hero { padding: 0 0 2.6mm; }
+    .hero h1 { font-size: 18.5pt; margin: 2mm 0 1.6mm; }
+    .hero .lead { font-size: 9pt; line-height: 1.6; }
+    .keys { margin-top: 2.6mm; gap: 2mm; }
+    .key { padding: 1.8mm 2.5mm; min-width: 0; }
+    .key .w { font-size: 10.5pt; }
+    .key .q { font-size: 7.5pt; }
+
+    .sec { padding-top: 4.5mm; }
+    .sec-head { margin-bottom: 2.2mm; }
+    .sec-head h2 { font-size: 14.5pt; margin: 1mm 0 0.6mm; }
+    .sec-head .sub { font-size: 8.5pt; }
+    .sec h3 { margin: 3mm 0 1.2mm; font-size: 10pt; }
+    .sec p { margin: 1mm 0; font-size: 9pt; }
+
+    #sec-2, #sec-3 { break-before: page; padding-top: 0; }
+
+    .soul { margin: 2mm 0; padding: 2mm 3mm; font-size: 10pt; }
+
+    .bar { height: 5.5mm; margin: 1.6mm 0 1mm; }
+    .bar .seg { font-size: 7pt; }
+
+    .bar-legend { font-size: 7.5pt; gap: 1mm 3mm; }
+
+    .insights { gap: 1.2mm 4mm; margin: 1.2mm 0 0.6mm; grid-template-columns: 1fr 1fr; }
+    .ins { font-size: 8.6pt; line-height: 1.5; padding-left: 4mm; }
+    .ins::before { top: 1.4mm; width: 2mm; height: 2mm; }
+
+    table { margin: 1.6mm 0; font-size: 8.4pt; }
+    th, td { padding: 1.5mm 2.2mm; line-height: 1.45; }
+    thead th { font-size: 8.2pt; }
+    .proof td { font-size: 7.9pt; }
+
+    .cap-flow { margin: 1.6mm 0 0; gap: 1.2mm; flex-wrap: nowrap; }
+    .cap { padding: 1.8mm 2mm; font-size: 7.6pt; }
+    .cap b { font-size: 8.4pt; }
+    .cap .tag { font-size: 6.8pt; margin-bottom: 0.6mm; }
+    .cap-link { padding: 0.8mm 0; font-size: 7.6pt; }
+    .prod-band { grid-template-columns: repeat(4, 1fr); gap: 1.6mm; margin-bottom: 1mm; }
+    .prod { padding: 1.4mm 2mm; font-size: 8pt; }
+    .prod small { font-size: 6.8pt; }
+
+    .photo-strip { grid-template-columns: repeat(4, 1fr); gap: 2mm; margin: 1.8mm 0 0.6mm; }
+    .photo-strip img { height: 16mm; }
+    .photo-strip figcaption { font-size: 6.6pt; margin-top: 0.6mm; }
+    .photo-strip.two { grid-template-columns: 1fr 1fr; }
+    .photo-strip.two img { height: 20mm; }
+
+    .pkg-wrap { padding: 2.5mm 2.5mm 2mm; margin: 1.6mm 0 0.8mm; }
+    .pkg-flow { gap: 1.2mm; flex-wrap: nowrap; }
+    .parr { font-size: 10pt; }
+    .pkg { padding: 2mm 2.5mm; }
+    .pkg b.t { font-size: 9.5pt; margin: 0.4mm 0 0.8mm; }
+    .pkg .prob { font-size: 7.8pt; margin-bottom: 1mm; }
+    .pkg .conf { padding-top: 1mm; font-size: 7.2pt; }
+    .pkg em { font-size: 6.8pt; }
+    .pkg-wrap .base-bar { margin-top: 1.6mm; }
+    .base-bar { padding: 1.8mm 2.5mm; gap: 1.2mm; font-size: 8.2pt; flex-wrap: nowrap; }
+
+    .tgts { grid-template-columns: repeat(3, 1fr); gap: 2mm; margin: 1.6mm 0; }
+    .tgt { padding: 2mm 2.5mm; }
+    .tgt b { font-size: 12pt; margin-bottom: 0.6mm; }
+    .tgt span { font-size: 7.6pt; }
+    .pipe { margin: 1.4mm 0 0.6mm; padding: 1.6mm 2.2mm; font-size: 7.8pt; }
+    .mini td, .mini th { font-size: 8.2pt; }
+
+    .ratio { height: 5.5mm; margin: 1.6mm 0 0.8mm; }
+    .ratio .r80, .ratio .r20 { font-size: 7.6pt; }
+    .std { gap: 1.6mm; margin: 1.6mm 0; }
+    .std .s { min-width: 0; padding: 1.5mm; font-size: 8.2pt; }
+    .std .s small { font-size: 7pt; }
+
+    .values { gap: 2mm; margin: 2mm 0; grid-template-columns: repeat(3, 1fr); }
+    .value { padding: 2.2mm; font-size: 8pt; line-height: 1.55; }
+    .value b.t { font-size: 9pt; margin-bottom: 0.8mm; }
+
+    .cycle { gap: 1.2mm; margin: 2mm 0 1mm; padding: 2mm; }
+    .cycle .c { min-width: 0; padding: 1.4mm 1mm; font-size: 7.4pt; }
+
+    .footer { margin-top: 4mm; padding-top: 2mm; font-size: 7.5pt; }
+
+    table, .soul, .values, .cycle, .photo-strip, .prod-band { break-inside: avoid; }
+  }
+</style>
+</head><body>
+  <header class="topbar">
+    <div class="brand"><span class="logo"></span>Trip.com Group <small>· 国内目的地商业化升级</small></div>
+    <nav class="nav">
+      <a href="#sec-1">01 为什么升级</a>
+      <a href="#sec-2">02 怎么共营</a>
+      <a href="#sec-3">03 规模化共赢</a>
+      <button class="print-btn" onclick="window.print()">打印 / 导出PDF</button>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- Hero -->
+    <div class="hero">
+      <span class="kicker">Domestic Destination Commercialization · 2026</span>
+      <h1>国内目的地业务升级：从项目交付，到年度入境增长共营</h1>
+      <p class="lead">Trip.com Group 成为目的地一体化入境增长伙伴。我们的判断是：<b>以年度合作为载体，把市场洞察、海外营销、内容、Trip.com承接与数据能力整合为一套全案入境增长解决方案</b>——目的地入境增长的同时，携程实现持续增长。</p>
+    </div>
+
+    <!-- ============ 01 为什么升级 ============ -->
+    <section class="sec" id="sec-1">
+      <div class="sec-head">
+        <span class="tag">01 · 为什么升级</span>
+        <h2>为什么现在必须升级：目的地需求已从单点采购转向年度入境增长共营</h2>
+        <p class="sub">一个事实看清旧模式，四个信号看清需求变化，落到三项升级。</p>
+      </div>
+
+      <h3><span class="en">事实</span>75%项目集中于一次性采购</h3>
+      <p>2025年项目结构中，<b>广告投放&amp;星球号与重点大会两类合计占75%</b>——以单点资源、一次性Campaign为主，合作随项目交付结束而结束，目的地资产无法沉淀。</p>
+
+      <h3><span class="en">信号</span>合作中已看到的四个需求变化</h3>
+      <ul class="insights">
+        <li class="ins"><b>广告投放：更关注海外投放。</b>2026年新增千万级预算（960＋2000w）。</li>
+        <li class="ins o"><b>重点大会：更关注形式创新与长效影响。</b>从办完一场会，转向内容共创与长尾传播。</li>
+        <li class="ins l"><b>达人传播：更讲究城市深度体验。</b>全年50+个均价20W达人活动走向主题化、标准化。</li>
+        <li class="ins g"><b>海外推介：需求激增。</b>2026 H1需求较2025年全年增长3倍。</li>
+      </ul>
+
+      <div class="soul">从"卖我们有什么"，转向"共同解决目的地的入境增长问题"。</div>
+
+      <h3><span class="en">升级</span>落到三项升级</h3>
+      <table class="compare">
+        <thead><tr><th>过去</th><th style="width:34px"></th><th>未来</th></tr></thead>
+        <tbody>
+          <tr><td class="old">一次性项目</td><td class="arrow">→</td><td class="new">年度共同经营</td></tr>
+          <tr><td class="old">广告／达人／活动等单点资源</td><td class="arrow">→</td><td class="new">全案入境增长解决方案</td></tr>
+          <tr><td class="old">项目甲乙方</td><td class="arrow">→</td><td class="new">长期增长伙伴</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============ 02 怎么共营 ============ -->
+    <section class="sec" id="sec-2">
+      <div class="sec-head">
+        <span class="tag">02 · 怎么共营</span>
+        <h2>怎么共营：1 个年度总方案＋3 个阶段性解决方案</h2>
+        <p class="sub">1 个年度总方案，对应城市入境发展的三个先后阶段；每个阶段有明确的阶段性目标，阶段内配置可合作的子产品；全程由同一套年度共营底座交付与复盘。</p>
+      </div>
+
+      <h3><span class="en">治理</span>年度共营与普通项目的区别：组织、节奏、KPI</h3>
+      <table class="mini">
+        <thead><tr><th style="width:14%"></th><th>普通项目合作</th><th>年度共营</th></tr></thead>
+        <tbody>
+          <tr><th>组织</th><td>一次一议，单项目对接</td><td><b>联合项目组</b>，年度规划共定</td></tr>
+          <tr><th>节奏</th><td>交付即结束</td><td><b>季度复盘</b>，持续调优、滚动经营</td></tr>
+          <tr><th>KPI</th><td>交付指标</td><td><b>统一结果KPI</b>：入境游客、搜索、访问、订单</td></tr>
+        </tbody>
+      </table>
+
+      <h3><span class="en">方案</span>1 个年度总方案 → 3 个阶段性解决方案</h3>
+      <div class="pkg-wrap">
+        <div class="pkg-flow">
+          <div class="pkg">
+            <span class="no">阶段一</span>
+            <b class="t">海外市场破圈</b>
+            <div class="prob"><em>阶段性目标：</em>在核心客源国提升认知、带来增量流量。</div>
+            <div class="conf"><em>子产品配置：</em><b>海外联合投放</b>（"总对总"年框）· <b>海外文化周</b>（一国一策＋多城拼盘）· 当地媒介资源</div>
+          </div>
+          <span class="parr">→</span>
+          <div class="pkg">
+            <span class="no">阶段二</span>
+            <b class="t">目的地内容心智增长</b>
+            <div class="prob"><em>阶段性目标：</em>把"有资源"变成"有记忆点、可传播的目的地体验"。</div>
+            <div class="conf"><em>子产品配置：</em><b>大会2.0</b>（"1＋3"内容共创）· <b>ChinaMaxxing</b>（"做一天当地人"城市IP）· 达人与内容共创</div>
+          </div>
+          <span class="parr">→</span>
+          <div class="pkg">
+            <span class="no">阶段三</span>
+            <b class="t">产品与交易转化</b>
+            <div class="prob"><em>阶段性目标：</em>把曝光和种草沉淀为 Trip.com 的产品供给、访问与订单。</div>
+            <div class="conf"><em>子产品配置：</em>专题页 · 目的地产品 · 权益设计 · 联合IBU承接</div>
+          </div>
+        </div>
+        <div class="base-bar"><span class="lbl">年度共营底座</span>市场洞察与策略 <span class="arr">→</span> 方案组合 <span class="arr">→</span> Trip.com交易承接 <span class="arr">→</span> 季度数据复盘与优化</div>
+      </div>
+
+      <h3><span class="en">验证</span>两项最强验证：均已在广东落地</h3>
+      <div class="values two">
+        <div class="value"><b class="t">联合投放｜年框扩容近3倍</b><span class="mut">广东省厅"总对总"合作：年框从<b>990w</b>扩容至<b>960＋2000w</b>，覆盖<b>15个国家</b>、机场／商圈／酒店<b>3类点位</b>，年框价格接近成本价，效果可追踪。</span></div>
+        <div class="value"><b class="t">大会2.0｜从交付到传播资产</b><span class="mut">广东推介会落地<b>"1＋3"内容共创体系</b>（T−7采风生产、T＋30持续分发＋主舞台、成果展、灵感集市），大会从ToG交付转向市场化传播。</span></div>
+      </div>
+      <div class="pipe"><b>Pipeline（首例试点沟通中）：</b>成都——年度入境游方案提报中、海外文化周·韩国站沟通中（成都中外文化和旅游交流中心）；上海徐汇——ChinaMaxxing首站沟通中，联动9家三级医院、旗袍店等资源，为海外游客提供医疗、旗袍定制、验光配镜等入境服务。<b>广东之外，成都与徐汇两个场景资源最成熟、最有把握率先复制。</b></div>
+    </section>
+
+    <!-- ============ 03 规模化共赢 ============ -->
+    <section class="sec" id="sec-3">
+      <div class="sec-head">
+        <span class="tag">03 · 规模化共赢</span>
+        <h2>规模化共赢：以80%标准化全案，沉淀年度伙伴与持续入境交易增长</h2>
+        <p class="sub">2026下半年完成3省年度伙伴合作，2027年推广至10省，以80%标准化全案支撑规模化复制。</p>
+      </div>
+
+      <h3><span class="en">目标</span>2026下半年完成3省年度伙伴合作，2027推广至10省</h3>
+      <div class="tgts">
+        <div class="tgt"><b>3 省</b><span>2026下半年完成3省年度伙伴合作：广东标杆已落地，成都、徐汇等pipeline转入。</span></div>
+        <div class="tgt"><b>10 省</b><span>2027年推广至10省：以80%标准化全案支撑多省滚动复制。</span></div>
+        <div class="tgt"><b>4 项结果指标</b><span>入境游客、搜索、访问、订单：统一KPI，与伙伴按季度共同复盘。</span></div>
+      </div>
+
+      <h3><span class="en">交付模式</span>80%标准化解决方案＋20%目的地定制</h3>
+      <div class="ratio"><div class="r80">80% 标准化解决方案</div><div class="r20">20% 目的地定制</div></div>
+      <div class="std">
+        <div class="s">标准诊断<small>客源与心智评估</small></div>
+        <div class="s">标准产品<small>四类能力模块配置</small></div>
+        <div class="s">标准资源<small>海外媒介与达人池</small></div>
+        <div class="s">标准KPI<small>结果指标与季度复盘</small></div>
+      </div>
+
+      <h3><span class="en">价值</span>三方价值，落到可衡量结果</h3>
+      <div class="values">
+        <div class="value"><b class="t">对目的地</b><span class="mut">一个伙伴解决完整入境增长问题，预算投入更连续、更透明、更可衡量。</span></div>
+        <div class="value"><b class="t">对携程</b><span class="mut">可衡量的长期结果：年框续约与增购、目的地产品供给增长、Trip.com入境订单/GMV、核心市场渗透。</span></div>
+        <div class="value"><b class="t">对双方</b><span class="mut">目的地入境增长，就是携程入境增长。</span></div>
+      </div>
+
+      <h3><span class="en">飞轮</span>目的地与携程的增长飞轮</h3>
+      <div class="cycle">
+        <div class="c">目的地入境增长</div><span class="arr">→</span>
+        <div class="c">Trip.com用户与目的地产品供给增长</div><span class="arr">→</span>
+        <div class="c">交易增长</div><span class="arr">→</span>
+        <div class="c">客户持续投入</div><span class="arr">→</span>
+        <div class="c">再促进目的地增长</div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <span>Trip.com Group · 国内目的地商业化升级 · Internal</span>
+      <span>2026.08</span>
+    </div>
+  </main>
+
+</body></html>
